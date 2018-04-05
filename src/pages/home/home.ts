@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Toast } from '@ionic-native/toast';
 import { DataServiceProvider } from '../../providers/data-service/data-service';
-
+// home page content for thze scann of the Qrcode
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

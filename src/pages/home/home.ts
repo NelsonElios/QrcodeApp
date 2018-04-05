@@ -10,6 +10,8 @@ import { DataServiceProvider } from '../../providers/data-service/data-service';
 })
 export class HomePage {
 
+  //visitors: any[] = [];
+  //selectedVisitor: any;
   products: any[] = [];
   selectedProduct: any;
   productFound:boolean = false;
@@ -28,14 +30,14 @@ export class HomePage {
   scan() {
     this.selectedProduct = {};
     this.barcodeScanner.scan().then((barcodeData) => {
-      this.selectedProduct = this.products.find(product => product.plu === barcodeData.text);
+      this.selectedProduct = this.products.find(product => product.name === barcodeData.text); //product.plu
       if(this.selectedProduct !== undefined) {
         this.productFound = true;
         console.log(this.selectedProduct);
       } else {
         this.selectedProduct = {};
         this.productFound = false;
-        this.toast.show('Product not found', '5000', 'center').subscribe(
+        this.toast.show('Product not found', '2000', 'center').subscribe(
           toast => {
             console.log(toast);
           }

@@ -16,7 +16,7 @@ export class DataServiceProvider {
   }
 
   getProducts(){
-    return this.http.get('assets/data/products.json')
+    return this.http.get('assets/data/visitors.json')
       .map((response:Response)=>response.json());
   }
 

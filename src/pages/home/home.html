@@ -1,30 +1,53 @@
 <ion-header>
   <ion-navbar>
+    <ion-menu [content]="mycontent">
+      <ion-content>
+        <ion-list>
+          <p>some menu content, could be list items</p>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-nav #mycontent [root]="rootPage"></ion-nav> <!--les crochets transforment l'attribut en variable-->
     <ion-title>
-      Ionic Blank
+      Qr code Scan
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-  <h1>
-    <button ion-button color="dark" full round (click)="scan()">Scanner</button>
-  </h1>
+
+  <!--<ion-card class="formCard" *ngIf="productFound">
+    <ion-list>
+      <ion-item>
+        <ion-label>Nom</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Prenom</ion-label>
+        <ion-input type="text"><p>let me put some paragraph in</p></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>-->
+
+    <button class="buttonScan" ion-button color="primary" full round (click)="scan()"><ion-icon name="qr-scanner"> Scanner</ion-icon></button>
+
 
   <ion-card *ngIf="productFound">
     <ion-card-header>
-      <h2>Price: $ {{selectedProduct.price}}</h2>
+      <h2>Nom: $ {{selectedProduct.name}}</h2> <!--selectedproduct.plu-->
     </ion-card-header>
     <ion-card-content>
+
       <ul>
-        <li>{{selectedProduct.plu}}</li>
-        <li>{{selectedProduct.name}}</li>
-        <li>{{selectedProduct.desc}}</li>
+        <li>{{selectedProduct.surname}}</li>
+        <!--<li>{{selectedProduct.name}}</li>
+        <li>{{selectedProduct.desc}}</li>-->
       </ul>
     </ion-card-content>
   </ion-card>
+
+
+
+
 </ion-content>

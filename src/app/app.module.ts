@@ -10,6 +10,9 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DataServiceProvider } from '../providers/data-service/data-service';
+import {ScannerPageModule} from "../pages/scanner/scanner.module";
+import {ScannerPage} from "../pages/scanner/scanner";
+import {QRScanner} from "@ionic-native/qr-scanner";
 
 @NgModule({
   declarations: [
@@ -19,12 +22,14 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    ScannerPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ScannerPage
   ],
   providers: [
     StatusBar,
@@ -32,7 +37,8 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BarcodeScanner,
     Toast,
-    DataServiceProvider
+    DataServiceProvider,
+    QRScanner
   ]
 })
 export class AppModule {}

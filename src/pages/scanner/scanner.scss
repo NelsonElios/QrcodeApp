@@ -1,3 +1,15 @@
+@import "../../../node_modules/bourbon/core/bourbon.scss";
+
 page-scanner {
 
+
+  .buttonScan{
+    font-family: $font-stack-lucida-grande;
+    // @include size(4em);
+    margin-top: 100px;
 }
+
+
+
+}
+

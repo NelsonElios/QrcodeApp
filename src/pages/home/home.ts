@@ -27,7 +27,7 @@ export class HomePage {
         });
   }
 
-  scan() {
+  scan1() {
     this.selectedProduct = {};
     this.barcodeScanner.scan().then((barcodeData) => {
       this.selectedProduct = this.products.find(product => product.name === barcodeData.text); //product.plu
